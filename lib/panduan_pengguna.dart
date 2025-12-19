@@ -53,7 +53,7 @@ class PanduanPengguna extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Muhamad Priska Yamani",
+                        "Arga Surya Pratama",
                         style: TextStyle(
                           fontSize: 12.5,
                           fontWeight: FontWeight.w600,

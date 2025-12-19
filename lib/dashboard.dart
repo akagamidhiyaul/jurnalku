@@ -3,6 +3,9 @@ import 'profile.dart';
 import 'explore.dart';
 import 'habit_journal.dart';
 import 'witness_request.dart';
+import 'panduan_pengguna.dart';
+import 'account_setting.dart';
+import 'login.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -40,6 +43,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6FB),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0.5,
         centerTitle: true,
@@ -174,6 +178,33 @@ class _Sidebar extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => const WitnessRequestPage(),
+                    ),
+                  );
+                }
+              },
+            ),
+          ),
+          const Divider(height: 32),
+          ...footerItems.map(
+            (item) => _SidebarTile(
+              item: item,
+              onTap: () {
+                if (item.label == 'Panduan Penggunaan') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const PanduanPengguna(),
+                    ),
+                  );
+                } else if (item.label == 'Pengaturan Akun') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const AccountSettingsPage(),
+                    ),
+                  );
+                } else if (item.label == 'Log Out') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const Login(),
                     ),
                   );
                 }

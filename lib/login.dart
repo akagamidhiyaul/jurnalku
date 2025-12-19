@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dashboard.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -83,12 +84,17 @@ class Login extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF003D9E),
+                        backgroundColor: const Color(0xFF003D9E),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Dashboard()),
+                        );
+                      },
                       child: const Text(
                         "Masuk",
                         style: TextStyle(fontSize: 16, color: Colors.white),
